@@ -44,3 +44,5 @@ def help(command_list):
 
 
 print(help(sys.argv[1:]))
+
+print(dir("./"))
