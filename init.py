@@ -4,7 +4,7 @@
 # author: OshDubh
 # description: Initialises a new project folder
 # date created: 11:19 on the 19th of February, 2023
-# date last modified: 11:19 on the 19th of February, 2023
+# date last modified: 11:32 on the 19th of February, 2023
 
 # external imports
 import os
