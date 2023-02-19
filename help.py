@@ -6,12 +6,16 @@
 # date created: 23:23 on the 18th of February, 2023
 # date last modified: 23:23 on the 18th of February, 2023
 
+# import local packages to get their docstrings 
+from init import init
+
+
 def help(command_list):
 	"""Get general info on the available commands."""
 	# variables
 	commands = {
 		"help": help.__doc__,
-		"init": "Initialise a new project.",
+		"init": init.__doc__,
 		"setup": "Instructions for performing first-time setup of text-to-biden.",
 		"image": "Process new, and give tags to, google images.",
 		"music": "Adds a background music track to a given video.",
