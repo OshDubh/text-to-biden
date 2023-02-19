@@ -11,7 +11,22 @@ import os
 import sys
 
 # local imports
-from help import help
+from help import help, command_list
 from init import init
 
-print(init("test"))
+# Process the cli and pass it to the relevant functions
+commands = sys.argv # build a list of the input
+commands.remove(__file__) # remove the filename from the options
+
+# check if the first argument is a valid command
+if not commands:
+	print(help("")) # list all the available commands
+
+# it was a valid command, pass to the right function
+elif commands[0] in command_list():
+	output = locals()[commands[0]](commands[1:]) # get the function name and then process the given arguments, passing the result back to output
+	print(output)
+
+# no valid command was given
+else:
+	print('"' + commands[0] + '"', 'is not a valid command. Use "help" to get a list of all available commands.')
