@@ -4,22 +4,21 @@
 # author: OshDubh
 # description: gets a list of all of the local functions, then lists them and their docstrings to build a complete help functio
 # date created: 23:23 on the 18th of February, 2023
-# date last modified: 23:23 on the 18th of February, 2023
+# date last modified: 11:51 on the 19th of February, 2023
 
 # import local packages to get their docstrings 
 from init import init
 
+commands = {
+	"help": help.__doc__,
+	"init": init.__doc__,
+	"setup": "Instructions for performing first-time setup of text-to-biden.",
+	"image": "Process new, and give tags to, google images.",
+	"music": "Adds a background music track to a given video.",
+}
 
 def help(command_list):
 	"""Get general info on the available commands."""
-	# variables
-	commands = {
-		"help": help.__doc__,
-		"init": init.__doc__,
-		"setup": "Instructions for performing first-time setup of text-to-biden.",
-		"image": "Process new, and give tags to, google images.",
-		"music": "Adds a background music track to a given video.",
-	}
 
 	output = "" # the built string that this function returns
 
@@ -41,3 +40,7 @@ def help(command_list):
 				output = output + '"' + s + '"' + " is not a valid command. Use [help] to see a list of all the available commands.\n"
 
 	return output # pass the built string back out
+
+# build a list of the commands for processing by the parent 
+def command_list():
+	return list(commands.keys())
