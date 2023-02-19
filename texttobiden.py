@@ -12,5 +12,6 @@ import sys
 
 # local imports
 from help import help
+from init import init
 
-print(help(sys.argv))
+print(init("test"))
